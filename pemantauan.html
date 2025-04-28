@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pemantauan Pertumbuhan Anak - Grow Up</title>
+  <link rel="stylesheet" href="pemantauan.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Untuk grafik -->
+</head>
+<body>
+
+<header>
+  <div class="container nav-container">
+    <div class="logo">Grow Up</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pemantauan.html" class="active">Pemantauan</a></li>
+        <li><a href="#">Jadwal</a></li>
+        <li><a href="#">Edukasi</a></li>
+        <li><a href="#">Konsultasi</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth">
+      <button class="login">Log In</button>
+      <button class="signup">Sign Up</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="pemantauan-section">
+  <div class="container">
+    <h1>Pemantauan Pertumbuhan Anak</h1>
+
+    <form id="growthForm" class="growth-form">
+      <input type="text" id="nama" placeholder="Isi nama..." required>
+      <input type="date" id="tanggalLahir" placeholder="Tanggal Lahir" required>
+      <input type="number" id="beratBadan" placeholder="Berat Badan (kg)" required>
+      <input type="number" id="tinggiBadan" placeholder="Tinggi Badan (cm)" required>
+
+      <div class="gender-selection">
+        <label><input type="radio" name="gender" value="Laki-Laki" required> Laki-Laki</label>
+        <label><input type="radio" name="gender" value="Perempuan" required> Perempuan</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Kirim</button>
+    </form>
+
+    <div id="hasil" class="hasil-section" style="display:none;">
+      <h2>Hasil Statistik Pertumbuhan</h2>
+      
+      <table class="growth-table">
+        <thead>
+          <tr>
+            <th>Umur (Bulan)</th>
+            <th>TB < -3 SD (cm)</th>
+            <th>TB < -2 SD (cm)</th>
+            <th>TB 0 SD (cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>20 Bulan</td>
+            <td>78.1 cm</td>
+            <td>80.3 cm</td>
+            <td>84.1 cm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <canvas id="growthChart" width="400" height="200"></canvas>
+
+      <div class="biodata">
+        <h3>Biodata Diri:</h3>
+        <p id="biodata"></p>
+      </div>
+
+      <div class="status-stunting">
+        <button id="stuntingStatus" class="status-btn">Aman dari STUNTING</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Grow Up</p>
+  </div>
+</footer>
+
+<script src="pemantauan.js"></script>
+
+</body>
+</html>
